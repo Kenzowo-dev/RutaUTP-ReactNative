@@ -14,7 +14,20 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@/shared/*": ["src/shared/*"],
+      "@/shared/components": ["src/shared/components"],
+      "@/shared/constants": ["src/shared/constants"],
+      "@/shared/hooks": ["src/shared/hooks"],
+      "@/shared/types": ["src/shared/types"],
+      "@/shared/providers": ["src/shared/providers"],
+      "@/features/*": ["src/features/*"],
+      "@/core/*": ["src/core/*"],
+      "@/data/*": ["src/data/*"]
+    }
   },
   "include": [
     "**/*.ts",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { RouterProvider } from '../hooks/useRouter';
+import { RouterProvider } from '@/shared/hooks/useRouter';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 
