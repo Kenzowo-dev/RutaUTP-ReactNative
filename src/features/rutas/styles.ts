@@ -1,3 +1,12 @@
+/**
+ * =============================================================================
+ * RUTAS STYLES — Estilos de la pantalla de rutas
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Define todos los estilos usados en RutasView: mapa, cards de rutas,
+ * vista de detalle, pasos y navegación CarPlay.
+ */
 import { Colors, Typography, Spacing, AppTracking } from '@/shared/constants';
 import { StyleSheet } from 'react-native';
 

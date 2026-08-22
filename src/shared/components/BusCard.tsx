@@ -1,3 +1,21 @@
+/**
+ * =============================================================================
+ * BUS CARD — Tarjeta de información de línea de transporte
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Muestra información compacta de una línea de transporte público
+ * (nombre de línea, empresa, tiempo de llegada, tipo de vehículo, placa).
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Card horizontal: diseñada para scroll horizontal (lista de buses cercanos).
+ * - Color dinámico: el color de acento se adapta según la línea (rojo, azul, verde).
+ * - Badge de llegada: destaca el tiempo restante con un fondo contrastante.
+ * - Placa informativa: muestra el identificador del vehículo para confirmación visual.
+ *
+ * USO:
+ * Se renderiza en el panel inferior del mapa (lista horizontal de buses cercanos).
+ */
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -14,6 +32,7 @@ interface BusCardProps {
 }
 
 export default function BusCard({ linea, empresa, minutos, tipo, placa, colorLinea, onPress }: BusCardProps) {
+  /** Determina si el color de acento es el primario para ajustar el badge */
   const isPrimary = colorLinea === Colors.appPrimary;
   const badgeBg = isPrimary ? Colors.primaryContainer : Colors.secondaryContainer;
   const badgeFg = isPrimary ? Colors.onPrimaryContainer : Colors.onSecondaryContainer;

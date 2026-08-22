@@ -1,3 +1,27 @@
+/**
+ * =============================================================================
+ * SEGURIDAD VIEW — Pantalla de reportes y rutas seguras
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Centraliza la información de seguridad: reportes comunitarios, rutas seguras
+ * con monitoreo, y acceso a emergencias (llamada al 105).
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Feed de reportes: cards con avatar, tipo, votos y comentarios.
+ * - Rutas seguras: lista con iconos y descripciones de zonas monitoreadas.
+ * - Mini mapa: mapa estático con polilínea de ruta segura.
+ * - Saludo dinámico: cambia según hora del día.
+ * - Modales: reportar incidente, detalle de reporte, detalle de ruta segura.
+ *
+ * ESTRUCTURA:
+ * 1. Summary bar (alertas hoy, paraderos iluminados, botón llamar 105)
+ * 2. Greeting card (saludo dinámico + fecha)
+ * 3. Lugares guardados (tiles: Casa, UTP, Añadir)
+ * 4. Rutas seguras hoy (mapa + lista de rutas)
+ * 5. Comunidad (feed de reportes)
+ * 6. Modales (reportar, detalle reporte, detalle ruta)
+ */
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, TextInput, Modal, Alert, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';

@@ -1,3 +1,25 @@
+/**
+ * =============================================================================
+ * PERFIL VIEW — Pantalla de perfil del usuario
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Muestra y permite editar el perfil del usuario: avatar, nombre, estadísticas,
+ * billetera (tarjeta + carnet), preferencias y toggles.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Hero con gradiente: encabezado visual con avatar, nombre, badges.
+ * - Iniciales dinámicas: calculadas desde el nombre (primer letra de cada palabra).
+ * - Billetera: acceso a tarjeta de pago (TarjetaFormSheet) y carnet (CarnetScannerView).
+ * - ToggleRow: componente interno reutilizable para preferencias.
+ * - Stats: tarjeta con viajes, rutas y logros del usuario.
+ *
+ * ESTRUCTURA:
+ * 1. Hero (gradiente + avatar + nombre + badges + billetera)
+ * 2. Stats card (viajes, rutas, logros)
+ * 3. Preferencias (toggles + editar nombre/perfil)
+ * 4. Modales (editar nombre, tarjeta, carnet)
+ */
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, TextInput, Modal, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';

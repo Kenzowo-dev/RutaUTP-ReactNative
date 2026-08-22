@@ -1,3 +1,19 @@
+/**
+ * =============================================================================
+ * MAPA VIEWMODEL — Estado y lógica de la pantalla del mapa
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Maneja todo el estado del mapa: búsqueda de destinos, simulación de buses,
+ * región del mapa, modales (drawer, reportar, éxito).
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Estado centralizado: toda la lógica de UI del mapa vive aquí.
+ * - Simulación de buses: usa setInterval para mover buses en coordenadas.
+ * - Cleanup del timer: useEffect limpia el intervalo al desmontar.
+ * - Selección de destino: actualiza región del mapa y spawnea buses cercanos.
+ * - Búsqueda: encuentra destino por coincidencia de texto (case-insensitive).
+ */
 import { useState, useEffect, useRef } from 'react';
 import { DestinoChip } from '@/shared/types';
 import { useRouter } from '@/shared/hooks/useRouter';

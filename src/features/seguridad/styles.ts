@@ -1,3 +1,12 @@
+/**
+ * =============================================================================
+ * SEGURIDAD STYLES — Estilos de la pantalla de seguridad
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Define todos los estilos usados en SeguridadView: summary bar, greeting,
+ * tiles, mapa, rutas seguras y reportes.
+ */
 import { StyleSheet } from 'react-native';
 import { Colors, Typography, AppTracking } from '@/shared/constants';
 

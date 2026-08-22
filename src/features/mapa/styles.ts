@@ -1,3 +1,12 @@
+/**
+ * =============================================================================
+ * MAPA STYLES — Estilos de la pantalla del mapa
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Define todos los estilos usados en MapaView: mapa, marcadores, panel de
+ * búsqueda, chips, drawer y modales.
+ */
 import { StyleSheet } from 'react-native';
 import { Colors, Typography, AppTracking } from '@/shared/constants';
 

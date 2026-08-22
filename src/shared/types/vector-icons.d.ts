@@ -1,3 +1,22 @@
+/**
+ * =============================================================================
+ * DECLARACIÓN DE TIPOS — @expo/vector-icons
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Declara los tipos TypeScript para los iconos vectoriales de la app.
+ * Expo no incluye tipos nativos para sus iconos, por lo que este archivo
+ * proporciona definiciones mínimas para evitar errores de TypeScript.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - TypeScript requiere declaraciones de tipo para módulos sin tipos propios.
+ * - IconProps define las props comunes (name, size, color, style) que todos
+ *   los componentes de iconos aceptan.
+ * - Cada clase (Ionicons, MaterialIcons, etc.) extiende Component con IconProps.
+ *
+ * NOTA: Solo se usa Ionicons en el proyecto, pero se declaran todas las
+ * familias de iconos por si se necesitan en el futuro.
+ */
 declare module '@expo/vector-icons' {
   import { Component } from 'react';
   import { TextStyle, ViewStyle } from 'react-native';

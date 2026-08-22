@@ -1,3 +1,24 @@
+/**
+ * =============================================================================
+ * MAPA SERVICE — Datos estáticos y simulación de buses para el mapa
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Provee los destinos, rutas disponibles, coordenadas de marcadores y la
+ * lógica de simulación de buses en el mapa.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Destinos frecuentes: coordenadas GPS reales de lugares comunes (Casa, UTP, Trabajo).
+ * - Rutas de transporte: líneas con datos de empresa, tiempo, costo y congestión.
+ * - Simulación de buses: genera 6 buses alrededor de un destino en círculo,
+ *  con ángulo y velocidad aleatorios para simular movimiento.
+ * - Coordenadas UTP/usuario: puntos fijos para marcadores del mapa.
+ *
+ * SIMULACIÓN:
+ * Los buses se generan en un radio de 0.008-0.012 grados alrededor del destino.
+ * Cada bus tiene un ángulo inicial (0°, 60°, 120°, etc.) y se mueve en línea
+ * recta con una probabilidad del 0.2% de cambiar de dirección por tick.
+ */
 import { DestinoChip, RutaOpcion } from '@/shared/types';
 import { Colors } from '@/shared/constants';
 

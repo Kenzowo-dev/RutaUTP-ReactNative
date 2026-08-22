@@ -1,10 +1,32 @@
+/**
+ * =============================================================================
+ * TARJETA FORM SHEET — Formulario de método de pago
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Bottom sheet modal que permite al usuario agregar una tarjeta de crédito/débito
+ * como método de pago. Incluye campos para número, titular, vencimiento y CVV.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Formateo automático: el número de tarjeta se formatea en grupos de 4 dígitos.
+ * - Validación en tiempo real: el botón se habilita solo cuando todos los campos
+ *   son válidos (16 dígitos, titular no vacío, 4 dígitos de fecha, 3+ de CVV).
+ * - Seguridad: el campo CVV usa secureTextEntry para ocultar los dígitos.
+ * - Formato de fecha: el campo de vencimiento agrega automáticamente el slash (/).
+ * - UX de pago: diseño similar a aplicaciones de pago modernas.
+ *
+ * USO:
+ * <TarjetaFormSheet onGuardar={handleSave} onClose={handleClose} />
+ */
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors, Typography, Spacing, AppTracking } from '../constants';
 
 interface Props {
+  /** Callback cuando se guarda la tarjeta (recibe el número formateado) */
   onGuardar: (numero: string) => void;
+  /** Callback cuando se cierra el sheet sin guardar */
   onClose: () => void;
 }
 
@@ -14,6 +36,11 @@ export default function TarjetaFormSheet({ onGuardar, onClose }: Props) {
   const [expiry, setExpiry] = useState('');
   const [cvv, setCvv] = useState('');
 
+  /** Validación completa del formulario:
+   *  - 16 dígitos en número de tarjeta
+   *  - Titular no vacío
+   *  - 4 dígitos en fecha de vencimiento
+   *  - 3+ dígitos en CVV */
   const formValido =
     cardNumber.replace(/\D/g, '').length === 16 &&
     cardholder.trim().length > 0 &&

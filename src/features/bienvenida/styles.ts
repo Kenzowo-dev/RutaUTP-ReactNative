@@ -1,3 +1,17 @@
+/**
+ * =============================================================================
+ * BIENVENIDA STYLES — Estilos de la pantalla de bienvenida
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Define todos los estilos usados en BienvenidaView. Centralizados para
+ * mantener separación entre lógica (View) y presentación (styles).
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Separación de concerns: la vista contiene JSX, los styles contienen CSS-in-JS.
+ * - Reutilización de tokens: importa colores, tipografía y spacing del sistema.
+ * - StyleSheet.create: optimización de React Native que crea un objeto único.
+ */
 import { Colors, Typography, Spacing, AppTracking } from '@/shared/constants';
 import { StyleSheet } from 'react-native';
 

@@ -1,3 +1,41 @@
+/**
+ * =============================================================================
+ * DATOS SIMULADOS (MOCK) — Dataset centralizado para demostración
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Proporciona datos de ejemplo que simulan la información que vendría de
+ * un backend real (rutas, destinos, reportes, etc.).
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Prototipado rápido: permite desarrollar la UI sin depender de un backend.
+ * - Demostración funcional: la app funciona completamente sin conexión.
+ * - Datos realistas: las coordenadas, nombres de empresas y rutas son reales
+ *   de Trujillo, Perú (zona de influencia de la UTP).
+ *
+ * ESTRUCTURA DEL DATASET:
+ * - MOCK_DESTINOS: lugares frecuentes con coordenadas GPS reales
+ * - MOCK_RUTAS_OPCIONES / MOCK_RUTAS: opciones de transporte público
+ * - MOCK_COORDENADAS_LINEAS: puntos GPS para trazar polilíneas en el mapa
+ * - MOCK_REPORTES: reportes de comunidad simulados (alertas, tráfico, sugerencias)
+ * - MOCK_RUTAS_SEGURAS: zonas con monitoreo de seguridad
+ * - MOCK_SAMPLE_LUGARES: lugares pre-guardados por defecto
+ * - MOCK_LINEAS: líneas de transporte guardadas
+ * - MOCK_CAR_INSTRUCCIONES: instrucciones paso a paso para navegación
+ *
+ * NOTA IMPORTANTE:
+ * Este archivo NO está importado por los servicios. Los datos están duplicados
+ * directamente en cada clase Service. Para producción, se recomienda:
+ * 1. Eliminar este archivo y usar los Services como única fuente
+ * 2. O importar estos mocks desde los Services para evitar duplicación
+ *
+ * COORDENADAS GPS (Trujillo, Perú):
+ * - UTP Trujillo: -8.1116, -79.0287
+ * - Huanchaco: -8.0825, -79.1197
+ * - Salaverry: -8.1200, -79.0350
+ */
+
+/** Destinos frecuentes con coordenadas GPS para chips de acceso rápido */
 export const MOCK_DESTINOS = [
   { id: 1, label: 'Casa', icon: 'home', lat: -8.1180, lon: -79.0350 },
   { id: 2, label: 'UTP', icon: 'school', lat: -8.1116, lon: -79.0287 },
@@ -6,6 +44,7 @@ export const MOCK_DESTINOS = [
   { id: 5, label: 'Huanchaco', icon: 'water', lat: -8.0825, lon: -79.1197 },
 ];
 
+/** Opciones de rutas disponibles (utilizadas en MapaView) */
 export const MOCK_RUTAS_OPCIONES = [
   {
     id: 1,
@@ -39,6 +78,7 @@ export const MOCK_RUTAS_OPCIONES = [
   },
 ];
 
+/** Lista completa de rutas (utilizada en RutasView) */
 export const MOCK_RUTAS = [
   {
     id: 1,
@@ -82,6 +122,8 @@ export const MOCK_RUTAS = [
   },
 ];
 
+/** Coordenadas GPS para trazar las rutas como polilíneas en el mapa
+ *  Cada clave es el identificador de la línea (B, 10, 4, C, 7, A) */
 export const MOCK_COORDENADAS_LINEAS: Record<string, { latitude: number; longitude: number }[]> = {
   B: [
     { latitude: -8.1200, longitude: -79.0350 },
@@ -128,6 +170,7 @@ export const MOCK_COORDENADAS_LINEAS: Record<string, { latitude: number; longitu
   ],
 };
 
+/** Reportes simulados de la comunidad (utilizados en SeguridadView) */
 export const MOCK_REPORTES = [
   {
     id: '1',
@@ -164,6 +207,7 @@ export const MOCK_REPORTES = [
   },
 ];
 
+/** Zonas y rutas con monitoreo de seguridad activo */
 export const MOCK_RUTAS_SEGURAS = [
   {
     id: 0,
@@ -185,6 +229,7 @@ export const MOCK_RUTAS_SEGURAS = [
   },
 ];
 
+/** Lugares pre-guardados por defecto (utilizados en GuardadoView) */
 export const MOCK_SAMPLE_LUGARES = [
   { id: '1', nombre: 'UTP', direccion: 'Av. España 123, Trujillo', categoria: 'Universidad', esFrecuente: true, colorBadge: '#a80033' },
   { id: '2', nombre: 'Casa', direccion: 'Urb. El Recreo, Trujillo', categoria: 'Hogar', esFrecuente: false, colorBadge: '#a80033' },
@@ -194,6 +239,7 @@ export const MOCK_SAMPLE_LUGARES = [
   { id: '6', nombre: 'Playa Huanchaco', direccion: 'Malecón Huanchaco', categoria: 'Playa', esFrecuente: false, colorBadge: '#a80033' },
 ];
 
+/** Líneas de transporte guardadas por defecto */
 export const MOCK_LINEAS = [
   {
     id: 'B',
@@ -221,6 +267,7 @@ export const MOCK_LINEAS = [
   },
 ];
 
+/** Instrucciones paso a paso para la navegación tipo CarPlay */
 export const MOCK_CAR_INSTRUCCIONES = [
   { texto: 'Camina 250m hasta Av. España', distancia: '250 m', icono: 'walk' },
   { texto: 'Sube al bus Línea B en el paradero', distancia: '15 min', icono: 'bus' },

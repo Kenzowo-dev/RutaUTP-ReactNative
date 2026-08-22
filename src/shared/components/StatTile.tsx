@@ -1,3 +1,18 @@
+/**
+ * =============================================================================
+ * STAT TILE — Mosaico de estadística con icono
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Muestra un valor estadístico con su etiqueta e icono representativo.
+ * Usado en la pantalla de rutas para mostrar tiempo, costo, transbordos y congestión.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Grid de estadísticas: se renderiza en un contenedor flex-wrap de 2 columnas.
+ * - Icono circular: fondo con 20% de opacidad para no competir con el valor.
+ * - Colores contextuales: el color del icono puede cambiar según el tipo de dato.
+ * - Compacto: suficiente para mostrar información sin ocupar demasiado espacio.
+ */
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -23,8 +38,7 @@ export default function StatTile({ icon, iconColor, label, value }: StatTileProp
             style={[
               styles.value,
               {
-                color: iconColor === Colors.secondary ? Colors.secondary : Colors.onSurface,
-              },
+                color: iconColor === Colors.secondary ? Colors.secondary : Colors.onSurface },
             ]}
           >
             {value}

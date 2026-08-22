@@ -1,3 +1,18 @@
+/**
+ * =============================================================================
+ * FEATURE CARD — Tarjeta de característica destacada
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Muestra una característica de la app con icono, etiqueta y título descriptivo.
+ * Usada en la pantalla de bienvenida para destacar funcionalidades principales.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Grid de 2 columnas: se muestra junto a otra FeatureCard en fila.
+ * - Icono circular: fondo con opacidad del color para suavidad visual.
+ * - Label en caps: etiqueta descriptiva corta (ej: "SEGURIDAD", "AHORRO").
+ * - Radio grande: border-radius de 26px para estilo moderno y amigable.
+ */
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';

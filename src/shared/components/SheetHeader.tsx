@@ -1,3 +1,17 @@
+/**
+ * =============================================================================
+ * SHEET HEADER — Encabezado para bottom sheets y modales
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Encabezado consistente para paneles inferiores (sheets) y modales.
+ * Muestra un icono circular con fondo semitransparente y un título.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Consistencia visual: todos los sheets de la app comparten este encabezado.
+ * - Icono con fondo suave: fondo al 10% de opacidad para no sobrecargar visualmente.
+ * - Reutilizable: se usa en formularios de reporte, agregar lugar, etc.
+ */
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';

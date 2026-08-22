@@ -1,3 +1,20 @@
+/**
+ * =============================================================================
+ * RUTAS SERVICE — Datos de rutas, coordenadas e instrucciones
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Provee las rutas de transporte, coordenadas GPS para polilíneas e
+ * instrucciones paso a paso para la navegación simulada.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Rutas con color: cada línea tiene un color identificador visual.
+ * - Coordenadas por línea: diccionario que mapea línea → array de coordenadas.
+ * - Instrucciones fijas: 5 pasos predefinidos para la navegación CarPlay.
+ *
+ * NOTA: Las coordenadas son aproximadas para fines demostrativos.
+ * En producción vendrían de una API de rutas (Google Maps Directions, etc.).
+ */
 import { RutaOpcion } from '@/shared/types';
 import { Colors } from '@/shared/constants';
 

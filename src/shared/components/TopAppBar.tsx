@@ -1,3 +1,24 @@
+/**
+ * =============================================================================
+ * TOP APP BAR — Barra de navegación superior reutilizable
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Barra superior estándar que se muestra en todas las pantallas principales.
+ * Muestra un título, un botón leading (menú o volver) y un botón trailing
+ * opcional para acciones contextuales.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Reutilizabilidad: evita repetir la estructura de la barra en cada pantalla.
+ * - Configurable: mediante props se adapta a diferentes contextos:
+ *   - leading: 'none' (sin botón), 'menu' (hamburguesa), 'back' (flecha volver)
+ *   - trailingIcon + trailingAction: botón contextual (ej: añadir, buscar)
+ * - Accesibilidad: incluye accessibilityLabel para lectores de pantalla.
+ * - Estilo Material: sombra sutil y borde inferior para separación visual.
+ *
+ * USO:
+ * <TopAppBar leading="menu" title="Mapa" trailingIcon="add" trailingAction={handleAdd} />
+ */
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -21,6 +42,7 @@ export default function TopAppBar({
 }: TopAppBarProps) {
   const router = useRouter();
 
+  /** Renderiza el botón izquierdo según el tipo configurado */
   const renderLeading = () => {
     switch (leading) {
       case 'menu':

@@ -1,3 +1,19 @@
+/**
+ * =============================================================================
+ * PERFIL VIEWMODEL — Estado y lógica de la pantalla de perfil
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Maneja el estado del perfil: nombre, toggles de preferencias, modales
+ * (editar nombre, tarjeta, carnet) y lógica de guardado.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Estado inicial: nombre por defecto "Joaquín Díaz", toggles preconfigurados.
+ * - onSaveName: valida que el nombre no esté vacío antes de guardar.
+ * - onSaveCard: extrae los últimos 4 dígitos del número de tarjeta.
+ * - onCaptureCarnet: marca el carnet como verificado tras el escaneo.
+ * - getIniciales: calcula iniciales desde el nombre (redundante con la vista).
+ */
 import { useState } from 'react';
 import { useRouter } from '@/shared/hooks/useRouter';
 

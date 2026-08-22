@@ -1,3 +1,21 @@
+/**
+ * =============================================================================
+ * BIENVENIDA SERVICE — Datos estáticos para la pantalla de bienvenida
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Provee el texto legal y las tarjetas de características que se muestran
+ * en la pantalla de onboarding.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Texto centralizado: el texto de términos y privacidad vive aquí para
+ *   fácil modificación sin tocar la vista.
+ * - Feature cards data: define iconos, colores, labels y títulos de las 2 cards.
+ * - Clase estática: no requiere instanciación, se usa directamente BienvenidaService.getLegalText().
+ *
+ * NOTA: Los datos de feature cards también están hardcodeados en la vista.
+ * Este servicio podría refactorizarse como única fuente de verdad.
+ */
 import { Colors } from '@/shared/constants';
 
 interface FeatureCardData {

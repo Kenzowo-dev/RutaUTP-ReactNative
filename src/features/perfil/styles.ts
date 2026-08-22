@@ -1,3 +1,12 @@
+/**
+ * =============================================================================
+ * PERFIL STYLES — Estilos de la pantalla de perfil
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Define todos los estilos usados en PerfilView: hero, avatar, stats,
+ * preferencias, toggles y modales.
+ */
 import { StyleSheet } from 'react-native';
 import { Colors, Typography, AppTracking } from '@/shared/constants';
 

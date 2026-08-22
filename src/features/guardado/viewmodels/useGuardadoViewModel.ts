@@ -1,3 +1,18 @@
+/**
+ * =============================================================================
+ * GUARDADO VIEWMODEL — Estado y lógica de la pantalla de guardados
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Maneja el estado de lugares y líneas guardadas, selección de tabs,
+ * modales y operaciones CRUD (agregar, seleccionar, eliminar).
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Estado inicial: lugares precargados desde GuardadoService.
+ * - CRUD básico: agregar (modal), seleccionar (ver detalle), eliminar (filter).
+ * - useCallback: optimiza rendimiento memorizando funciones.
+ * - Categoría icon: mapea categoría de lugar a icono de Ionicons.
+ */
 import { useState, useCallback } from 'react';
 import { LugarGuardado, CategoriaLugar, LineaGuardada, AppScreen } from '@/shared/types';
 import { useRouter } from '@/shared/hooks/useRouter';

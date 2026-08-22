@@ -1,3 +1,29 @@
+/**
+ * =============================================================================
+ * CARNET SCANNER VIEW — Escáner de carnet universitario con cámara
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Pantalla completa que utiliza la cámara del dispositivo para escanear
+ * el carnet universitario del usuario. Incluye permisos, overlay de escaneo
+ * y confirmación visual de captura.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Verificación de identidad: permite confirmar que el usuario es estudiante UTP.
+ * - UX de escáner: marco con esquinas para encuadrar el carnet.
+ * - Flujo de permisos: solicita permiso de cámara y muestra estado si se deniega.
+ * - Feedback visual: animación de checkmark al capturar exitosamente.
+ * - Timeout de confirmación: 1.5s de feedback antes de ejecutar el callback.
+ *
+ * FLUJO:
+ * 1. Solicita permiso de cámara al montarse
+ * 2. Muestra el viewfinder con marco de escaneo
+ * 3. Usuario presiona botón de captura
+ * 4. Muestra checkmark verde y ejecuta onCapture tras 1.5s
+ *
+ * USO:
+ * <CarnetScannerView onCapture={handleCapture} onClose={handleClose} />
+ */
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { CameraView, useCameraPermissions } from 'expo-camera';
@@ -5,7 +31,9 @@ import { Ionicons } from '@expo/vector-icons';
 import { Colors, Typography } from '../constants';
 
 interface Props {
+  /** Callback cuando se captura exitosamente el carnet */
   onCapture: () => void;
+  /** Callback cuando se cierra el escáner */
   onClose: () => void;
 }
 
@@ -14,12 +42,14 @@ export default function CarnetScannerView({ onCapture, onClose }: Props) {
   const [didCapture, setDidCapture] = useState(false);
   const [showCheckmark, setShowCheckmark] = useState(false);
 
+  /** Solicita permiso de cámara al montar el componente si aún no se ha pedido */
   useEffect(() => {
     if (permission === null) {
       requestPermission();
     }
   }, [permission, requestPermission]);
 
+  /** Maneja la captura: muestra feedback visual y ejecuta callback */
   const handleCapture = () => {
     if (didCapture) return;
     setDidCapture(true);
@@ -29,6 +59,7 @@ export default function CarnetScannerView({ onCapture, onClose }: Props) {
     }, 1500);
   };
 
+  /** Estado: solicitando permisos */
   if (!permission) {
     return (
       <View style={styles.container}>
@@ -37,6 +68,7 @@ export default function CarnetScannerView({ onCapture, onClose }: Props) {
     );
   }
 
+  /** Estado: permiso denegado */
   if (!permission.granted) {
     return (
       <View style={styles.container}>
@@ -52,6 +84,7 @@ export default function CarnetScannerView({ onCapture, onClose }: Props) {
     );
   }
 
+  /** Estado: escáner activo */
   return (
     <View style={styles.container}>
       <CameraView style={StyleSheet.absoluteFill} facing="back">
@@ -89,6 +122,7 @@ export default function CarnetScannerView({ onCapture, onClose }: Props) {
   );
 }
 
+/** Componente auxiliar: esquinas del marco de escaneo */
 function Corner({ position }: { position: string }) {
   let style: any = { position: 'absolute', width: 20, height: 20 };
   if (position === 'topLeft') {

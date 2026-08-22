@@ -1,3 +1,24 @@
+/**
+ * =============================================================================
+ * GUARDADO VIEW — Pantalla de lugares y líneas guardadas
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Permite al usuario gestionar sus lugares favoritos y líneas de transporte
+ * guardadas. Incluye tabs para alternar entre ambas vistas.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Tabs: "Lugares" y "Líneas" con subrayado dinámico.
+ * - Empty state: mensaje cuando no hay lugares guardados.
+ * - Modales: agregar lugar, detalle de lugar, detalle de línea.
+ * - Mapa en detalle: mini mapa con marcador del lugar seleccionado.
+ *
+ * ESTRUCTURA:
+ * 1. TopAppBar (con botón + para añadir)
+ * 2. Tabs (Lugares / Líneas)
+ * 3. Lista de cards con navegación a detalle
+ * 4. Modales (agregar, detalle lugar, detalle línea)
+ */
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, TextInput, Modal, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';

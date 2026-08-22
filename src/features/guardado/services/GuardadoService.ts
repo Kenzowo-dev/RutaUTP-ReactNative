@@ -1,3 +1,20 @@
+/**
+ * =============================================================================
+ * GUARDADO SERVICE — Datos de lugares y líneas guardadas
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Provee los lugares y líneas de transporte pre-guardados por defecto,
+ * además de la función para mapear categorías a iconos.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Lugares de ejemplo: UTP, Casa, Centro Comercial, etc. con datos realistas.
+ * - Líneas guardadas: B, 7, C con sus recorridos y tiempos estimados.
+ * - Mapeo de iconos: cada categoría de lugar tiene un icono representativo.
+ * - Clase estática: no requiere instanciación.
+ *
+ * NOTA: En producción, estos datos vendrían del backend o AsyncStorage.
+ */
 import { Colors } from '@/shared/constants';
 import { LugarGuardado, CategoriaLugar, LineaGuardada } from '@/shared/types';
 

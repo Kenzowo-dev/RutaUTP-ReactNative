@@ -1,3 +1,27 @@
+/**
+ * =============================================================================
+ * MAPA VIEW — Pantalla principal con mapa y transporte en tiempo real
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Pantalla central de la app que muestra un mapa con marcadores (UTP, usuario,
+ * buses simulados), barra de búsqueda, chips de destinos y lista de buses cercanos.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Mapa interactivo: react-native-maps con proveedor Google.
+ * - Marcadores custom: UTP (rojo), usuario (azul), buses (con número de línea).
+ * - Simulación de buses: se mueven en intervalos regulares (50ms).
+ * - Búsqueda: campo de texto con botón de limpiar y chips de acceso rápido.
+ * - Drawer: menú lateral con opciones de navegación y cerrar sesión.
+ * - Modales: reportar incidente y confirmación de envío.
+ *
+ * ESTRUCTURA:
+ * 1. Mapa de fondo (Google Maps)
+ * 2. UI overlay (barra de búsqueda, chips)
+ * 3. Panel inferior (botón reportar, buses cercanos)
+ * 4. Drawer modal (menú lateral)
+ * 5. Modales (reportar, confirmación)
+ */
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, Alert, Modal } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';

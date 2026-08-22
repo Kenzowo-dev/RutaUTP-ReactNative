@@ -1,3 +1,30 @@
+/**
+ * =============================================================================
+ * BIENVENIDA VIEW — Pantalla de onboarding / bienvenida
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Primera pantalla que ve el usuario al abrir la app. Presenta las características
+ * principales, un CTA para comenzar y enlace a términos de servicio.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Hero section: card de llegada, imagen de bus y texto motivacional.
+ * - Progress bar: gradiente decorativo que simula progreso de onboarding.
+ * - Feature cards: grid de 2 columnas mostrando beneficios (seguridad, ahorro).
+ * - Animación de presión: el botón CTA se escala al 95% al presionarlo.
+ * - Legal sheet: modal inferior con términos de servicio (desde footer).
+ *
+ * ESTRUCTURA:
+ * 1. Progress bar (gradiente decorativo)
+ * 2. Header (título + botón saltar)
+ * 3. Card de llegada (tiempo estimado)
+ * 4. Imagen de bus (placeholder visual)
+ * 5. Hero text (título + subtítulo)
+ * 6. Page dots (indicador de onboarding step)
+ * 7. Feature grid (2 cards)
+ * 8. CTA button (Comenzar)
+ * 9. Legal footer (términos + sheet modal)
+ */
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';

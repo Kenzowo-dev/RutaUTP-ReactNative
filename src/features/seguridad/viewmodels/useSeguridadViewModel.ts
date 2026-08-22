@@ -1,3 +1,18 @@
+/**
+ * =============================================================================
+ * SEGURIDAD VIEWMODEL — Estado y lógica de la pantalla de seguridad
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Maneja el estado de reportes, rutas seguras, modales y datos dinámicos
+ * (saludo según hora del día, fecha actual formateada).
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - saludoDinamico: useMemo calcula "Buenos días/tardes/noches" según hora.
+ * - fechaActual: fecha formateada en español-peruano (es-PE).
+ * - getTipoBg/Fg: mapea tipo de reporte a colores de fondo y texto.
+ * - Interface explícita: SeguridadViewModelReturn documenta el contrato.
+ */
 import { useState, useMemo } from 'react';
 import { ReporteComunidad, RutaSegura, TipoReporte } from '@/shared/types';
 import { useRouter } from '@/shared/hooks/useRouter';

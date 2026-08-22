@@ -1,3 +1,11 @@
+/**
+ * =============================================================================
+ * GUARDADO STYLES — Estilos de la pantalla de guardados
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Define todos los estilos usados en GuardadoView: tabs, cards, modales y mapas.
+ */
 import { Colors, Typography, Spacing, AppTracking } from '@/shared/constants';
 import { StyleSheet } from 'react-native';
 

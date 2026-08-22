@@ -1,3 +1,21 @@
+/**
+ * =============================================================================
+ * SEGURIDAD SERVICE — Datos de reportes y rutas seguras
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Provee los reportes comunitarios y rutas seguras predefinidos, además de
+ * las funciones para mapear tipos de reporte a colores.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Reportes simulados: alertas, tráfico y sugerencias con datos realistas.
+ * - Rutas seguras: zonas con patrullaje, iluminación o cámaras de seguridad.
+ * - Mapeo de colores: cada tipo de reporte tiene colores asociados.
+ * - Constantes a nivel de módulo: REPORTES y RUTAS_SEGURAS accesibles directamente.
+ *
+ * NOTA: En producción, los reportes vendrían de un backend con WebSocket
+ * para actualizaciones en tiempo real.
+ */
 import { ReporteComunidad, RutaSegura, TipoReporte } from '@/shared/types';
 import { Colors } from '@/shared/constants';
 

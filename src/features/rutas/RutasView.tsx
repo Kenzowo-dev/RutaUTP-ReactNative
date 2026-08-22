@@ -1,3 +1,23 @@
+/**
+ * =============================================================================
+ * RUTAS VIEW — Pantalla de rutas de transporte y navegación
+ * =============================================================================
+ *
+ * PROPÓSITO:
+ * Muestra la lista de rutas disponibles y el detalle de cada una con mapa,
+ * estadísticas e instrucciones paso a paso. Incluye navegación simulada tipo CarPlay.
+ *
+ * POR QUÉ SE HIZO ASÍ:
+ * - Maestro-detalle: lista de rutas → detalle con polilínea en el mapa.
+ * - Navegación CarPlay: modal que simula indicaciones de voz con progreso.
+ * - Componentes internos: DetalleRutaView, PasoRow, CarPlayView definidos
+ *   como funciones auxiliares dentro del mismo archivo (scope limitado).
+ *
+ * ESTRUCTURA:
+ * 1. Vista lista: mapa estático + cards de rutas
+ * 2. Vista detalle: mapa con polilínea + stats + pasos + CTA navegación
+ * 3. CarPlay: navegación simulada con instrucciones que avanzan cada 4s
+ */
 import React, { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import MapView, { Marker, Polyline, PROVIDER_GOOGLE } from 'react-native-maps';
